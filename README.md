@@ -1,1 +1,0 @@
-# beacademy-devstart-projeto-individual
