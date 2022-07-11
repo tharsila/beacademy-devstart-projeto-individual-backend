@@ -1,0 +1,30 @@
+.list {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  .list_item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    margin-bottom: 1.8rem;
+
+    .list_img {
+      width: 100%;
+    }
+
+    .list_info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      
+      h3 {
+        margin-top: 1rem;
+      }
+
+      p {
+        word-wrap: break-word;
+      }
+    }
+  }
+}

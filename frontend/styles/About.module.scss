@@ -1,0 +1,14 @@
+.about {
+  max-width: 1250px;
+  margin: 0 auto;
+  
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      width: 50%;
+    }
+  }
+}
