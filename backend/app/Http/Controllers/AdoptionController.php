@@ -16,6 +16,7 @@ class AdoptionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            "name" => ['required'],
             "email" => ['required', 'email'],
             "price" => ['required', 'numeric', 'between:10,100'],
             "pet_id" => ['required', 'int', 'exists:pets,id']
