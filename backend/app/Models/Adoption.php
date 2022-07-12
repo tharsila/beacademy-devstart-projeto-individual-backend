@@ -9,6 +9,7 @@ class Adoption extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'name',
         'email',
         'price',
         'pet_id',
