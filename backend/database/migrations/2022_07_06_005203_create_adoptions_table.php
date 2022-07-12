@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('adoptions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('email', 100);
             $table->decimal('price');
             $table->unsignedBigInteger('pet_id');
