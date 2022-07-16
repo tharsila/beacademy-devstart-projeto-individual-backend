@@ -14,4 +14,14 @@ class Adoption extends Model
         'price',
         'pet_id',
     ];
+
+    
+    /**
+     * Define a relação da adoção com o pet
+     * @return BelongsTo
+     */
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class);
+    }
 }
