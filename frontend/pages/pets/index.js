@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Title from '../../components/title/Title'
-import List from '../../components/list/List'
+import Title from '../../components/Title/Title'
+import List from '../../components/List/List'
 import { Dialog, TextField, Grid, DialogActions, Button, Snackbar } from '@mui/material'
 import { useIndex } from '../../data/hooks/pages/pets/useIndex'
 

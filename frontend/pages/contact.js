@@ -1,5 +1,5 @@
-import Input from '../components/form/Input'
-import SubmitButton from '../components/form/SubmitButton'
+import Input from '../components/Form/Input'
+import SubmitButton from '../components/Form/SubmitButton'
 import styles from '../styles/Contact.module.scss'
 import Image from 'next/image'
 
