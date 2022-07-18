@@ -30,7 +30,7 @@ class PetRequest extends FormRequest
             'location'=>['required', 'string'],
             'age'=> ['required', 'int'],
             'sex'=>['required', 'string'],
-            'weight'=>['required', 'numeric'],
+            'weigth'=>['required', 'numeric'],
             'race'=>['required', 'string'],
             'size'=>['required', 'string'],
             'since'=>['required', 'string'],

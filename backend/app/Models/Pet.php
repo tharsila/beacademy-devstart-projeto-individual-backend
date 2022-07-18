@@ -16,7 +16,7 @@ class Pet extends Model
         'location',
         'age',
         'sex',
-        'weight',
+        'weigth',
         'race',
         'size',
         'since'

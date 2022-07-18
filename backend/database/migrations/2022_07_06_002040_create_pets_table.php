@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('location');
             $table->integer('age');
             $table->string('sex');
-            $table->float('weight');
+            $table->decimal('weigth');
             $table->string('race');
             $table->string('size');
             $table->string('since');
