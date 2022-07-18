@@ -32,7 +32,7 @@ export default function List({pets, onSelect}) {
                     </div>
                     <div className={styles.info_content}>
                       <span>Peso</span>
-                      <strong>{pet.weight}kg</strong>
+                      <strong>{pet.weigth}kg</strong>
                     </div>
                     <div className={styles.info_content}>
                       <span>Raça</span>
