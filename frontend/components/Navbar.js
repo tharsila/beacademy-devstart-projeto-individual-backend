@@ -8,8 +8,12 @@ export default function Navbar() {
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className={styles.logo}>
-          <Image src="/images/logo.PNG" width="30px" height="30px" />
-          <span>HelpCat</span>
+          <Link href="/">
+            <a style={{display:'flex', alignItems: 'center', gap:'1rem'}} >
+              <Image src="/images/logo.PNG" alt={'HelpCat'} width="30px" height="30px" />
+              <span>HelpCat</span>
+            </a>
+          </Link>
         </div>
         <div className={styles.menu}>
           <ul className={styles.menuList}>
@@ -17,7 +21,7 @@ export default function Navbar() {
               <Link href="/#home"><a>Home</a></Link>
             </li>
             <li>
-             <Link href="/#about"><a>Sobre</a></Link> 
+              <Link href="/#about"><a>Sobre</a></Link> 
             </li>
             <li>
               <Link href="/#contact"><a>Contato</a></Link>
