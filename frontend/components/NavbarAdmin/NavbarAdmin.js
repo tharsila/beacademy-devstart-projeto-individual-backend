@@ -18,10 +18,13 @@ export default function NavbarAdmin() {
         <div className={styles.menu}>
           <ul className={styles.menuList}>
             <li>
-              <Link href="/pets/register"><a>Cadastrar Pet</a></Link>
+              <Link href="/pets/dashboard"><a>Dashboard</a></Link>
             </li>
             <li>
-              <Link href="/pets/report"><a>Relatorio de Adoções</a></Link> 
+              <Link href="/pets/dashboard/register"><a>Cadastrar Pet</a></Link>
+            </li>
+            <li>
+              <Link href="/pets/dashboard/report"><a>Relatorio de Adoções</a></Link> 
             </li>
           </ul>
         </div>
