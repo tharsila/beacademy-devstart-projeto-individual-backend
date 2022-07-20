@@ -9,7 +9,7 @@ export default function MainContainer({children}) {
 
   return (
     <>
-      {router.pathname === '/' || router.pathname === '/pets' ? <Navbar/> : <NavbarAdmin/> }
+      {router.pathname === '/' || router.pathname === '/pets' || router.pathname === '/register' || router.pathname === '/login' ? <Navbar/> : <NavbarAdmin/> }
       <main id="home" className={styles.container}>{children}</main>
       <Footer/>
     </>
