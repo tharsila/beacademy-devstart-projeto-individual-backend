@@ -4,7 +4,6 @@ import { ApiService } from '../../../services/ApiService'
 
 export function useIndex() { 
   const [listPets, setListPets] = useState([])
-
   const [petSelected, setPetSelected] = useState(null)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
