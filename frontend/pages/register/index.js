@@ -3,6 +3,7 @@ import {Paper, Grid, TextField, Button, Snackbar} from '@mui/material'
 import {useRegister} from '../../data/hooks/pages/register/useRegister'
 
 export default function register(){
+
   const {name, setName, email, setEmail, password, setPassword, passwordConfirmation, SetPasswordConfirmation, message, setMessage, signUp} = useRegister()
 
   return (

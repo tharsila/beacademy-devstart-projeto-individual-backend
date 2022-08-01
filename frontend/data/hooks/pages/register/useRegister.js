@@ -2,6 +2,7 @@ import {useState} from 'react'
 import { useRouter } from 'next/router'
 import {ApiServiceSanctum} from '../../../services/ApiServiceSanctum'
 
+
 export function useRegister() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -11,6 +12,7 @@ export function useRegister() {
   const router = useRouter()
 
   function signUp () {
+
     let item =
     {
       name, 
@@ -35,7 +37,6 @@ export function useRegister() {
           setMessage(error.response?.data.message)
         })
       })
-
     }else {
       setMessage('Preencha todos os campos!')
     }
@@ -48,6 +49,7 @@ export function useRegister() {
   }
 
   function cleanForm() {
+
     setName(''); setEmail(''); setPassword(''); SetPasswordConfirmation('');
   }
 

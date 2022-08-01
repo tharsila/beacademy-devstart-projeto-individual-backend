@@ -34,6 +34,9 @@ export default function NavbarAdmin() {
         <div className={styles.menu}>
           <ul className={styles.menuList}>
             <li>
+             <Link href="/pets/dashboard"><a>Dashboard</a></Link>
+            </li>
+            <li>
               <Link href="/dashboard/register"><a>Cadastrar Pet</a></Link>
             </li>
             <li>
