@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\AdoptionController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::get('/dashboard', [PetController::class, 'dashboard']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
+
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+
 
 Route::get('/pets',[PetController::class, 'index']);
 Route::post('/pets',[PetController::class, 'store']);

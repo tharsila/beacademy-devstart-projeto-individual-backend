@@ -27,6 +27,12 @@ export default function Navbar() {
               <Link href="/#contact"><a>Contato</a></Link>
             </li>
             <li>
+              <Link href="/register"><a>Registrar</a></Link>
+            </li>
+            <li>
+              <Link href="/login"><a>Entrar</a></Link>
+            </li>
+            <li>
               <Button text="Contribuir" />
             </li>
           </ul>

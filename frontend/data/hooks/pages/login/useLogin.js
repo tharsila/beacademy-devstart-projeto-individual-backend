@@ -1,25 +1,21 @@
 import {useState} from 'react'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import {ApiServiceSanctum} from '../../../services/ApiServiceSanctum'
+import {setCookie } from 'nookies'
 
-
-export function useRegister() {
-  const [name, setName] = useState('')
+export function useLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [passwordConfirmation, SetPasswordConfirmation] = useState('')
   const [message, setMessage] = useState('')
   const router = useRouter()
 
-  function signUp () {
-
+  function signIn () {
+    const csrf = ApiServiceSanctum.get('/sanctum/csrf-cookie')
     let item =
     {
-      name, 
       email, 
       password,
-      "password_confirmation": passwordConfirmation,
-      nameToken: "Usuario Logado"
+      csrf
     }
 
     console.warn(item)
@@ -27,16 +23,21 @@ export function useRegister() {
     if(validateForm()) {
       ApiServiceSanctum.get('/sanctum/csrf-cookie')
       .then(() => {
-        ApiServiceSanctum.post('/api/register', item)
+        ApiServiceSanctum.post('/api/login', item)
         .then(() => {
           cleanForm()
-          router.push('/login')
-          setMessage('Conta criada com sucesso')
+          setCookie(undefined, 'nextauth.token', csrf, {
+            maxAge: 60 * 60 * 1,
+
+          })
+          router.push('/dashboard')
+          setMessage('Você esta logado!')
         })
         .catch((error) => {
           setMessage(error.response?.data.message)
         })
       })
+
     }else {
       setMessage('Preencha todos os campos!')
     }
@@ -44,16 +45,15 @@ export function useRegister() {
 
   function validateForm() {
     return (
-      name.length > 2
+      email.length > 5
     )
   }
 
   function cleanForm() {
-
-    setName(''); setEmail(''); setPassword(''); SetPasswordConfirmation('');
+    setEmail(''); setPassword('');
   }
 
   return {
-    name, setName, email, setEmail, password, passwordConfirmation, SetPasswordConfirmation, setPassword, message, setMessage, signUp
+    email, setEmail, password, setPassword, message, setMessage, signIn
   }
 }
