@@ -23,6 +23,7 @@ export default function NavbarAdmin() {
     <>
       <header className={styles.header}>
       <nav className={styles.navbar}>
+        
         <div className={styles.logo}>
           <Link href="/">
             <a style={{display:'flex', alignItems:'center', gap:'1rem'}} >
@@ -34,7 +35,7 @@ export default function NavbarAdmin() {
         <div className={styles.menu}>
           <ul className={styles.menuList}>
             <li>
-             <Link href="/pets/dashboard"><a>Dashboard</a></Link>
+             <Link href="/dashboard"><a>Dashboard</a></Link>
             </li>
             <li>
               <Link href="/dashboard/register"><a>Cadastrar Pet</a></Link>
