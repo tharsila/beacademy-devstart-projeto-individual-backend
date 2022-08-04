@@ -20,7 +20,7 @@ export default function Pet() {
     setMessage,
     adoption
   } = useIndex()
-
+  
   return (
     <>
       <Head>

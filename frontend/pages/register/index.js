@@ -1,4 +1,5 @@
 import Title from '../../components/Title/Title'
+import Head from 'next/head'
 import {Paper, Grid, TextField, Button, Snackbar} from '@mui/material'
 import {useRegister} from '../../data/hooks/pages/register/useRegister'
 
@@ -8,6 +9,9 @@ export default function register(){
 
   return (
     <>
+      <Head>
+        <title>HelpCat | Criar Conta</title>
+      </Head>
       <Title title="Criar conta" subtitle="Complete os campos com suas informações"/>
       <Paper sx={{maxWidth: 970, mx:'auto', p: '40px'}}>
         <Grid container spacing={3}>
