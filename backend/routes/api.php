@@ -22,21 +22,19 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::post('/register', [UserController::class, 'register']);
-Route::post('/login', [UserController::class, 'login']);
-
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/dashboard', [PetController::class, 'dashboard']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
-
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-
 Route::get('/pets',[PetController::class, 'index']);
 Route::post('/pets',[PetController::class, 'store']);
+Route::get('/pets/{id}',[PetController::class, 'show']);
+Route::put('/pets/{id}',[PetController::class, 'update']);
+Route::delete('/pets/{id}',[PetController::class, 'destroy']);
 
 Route::get('/adocoes',[AdoptionController::class, 'index']);
 Route::post('/adocoes',[AdoptionController::class, 'store']);

@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email', 100);
             $table->decimal('price');
-            $table->unsignedBigInteger('pet_id');
-            $table->foreign('pet_id')->references('id')->on('pets');
+            $table->foreignId('pet_id')
+                    ->constrained('pets')
+                    ->onUpdate('CASCADE')
+                    ->onDelete('CASCADE');  
             $table->timestamps();
         });
     }
