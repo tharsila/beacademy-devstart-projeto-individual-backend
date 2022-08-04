@@ -1,4 +1,5 @@
 import Title from '../../components/Title/Title'
+import Head from 'next/head'
 import {Paper, Grid, TextField, Button, Snackbar} from '@mui/material'
 import {useLogin} from '../../data/hooks/pages/login/useLogin'
 
@@ -7,6 +8,9 @@ export default function login(){
 
   return (
     <>
+      <Head>
+        <title>HelpCat | Login</title>
+      </Head>
       <Title title="Acesse sua conta" subtitle="Informe seu email e senha de cadastro"/>
       <Paper sx={{maxWidth: 970, mx:'auto', p: '40px'}}>
         <Grid container spacing={3}>
